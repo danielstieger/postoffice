@@ -352,15 +352,15 @@
         </node>
       </node>
       <node concept="12nEzJ" id="4bjBXGrydMu" role="3caO6$">
-        <ref role="12nL8z" to="alhp:4bjBXGry806" resolve="from" />
+        <ref role="12nL8z" to="alhp:4bjBXGry806" resolve="fromCity" />
         <node concept="Xl_RD" id="4bjBXGrydMv" role="12k7lF">
-          <property role="Xl_RC" value="FROM" />
+          <property role="Xl_RC" value="FROMCITY" />
         </node>
       </node>
       <node concept="12nEzJ" id="4bjBXGrydMw" role="3caO6$">
-        <ref role="12nL8z" to="alhp:4bjBXGry824" resolve="to" />
+        <ref role="12nL8z" to="alhp:4bjBXGry824" resolve="toCity" />
         <node concept="Xl_RD" id="4bjBXGrydMx" role="12k7lF">
-          <property role="Xl_RC" value="TO" />
+          <property role="Xl_RC" value="TOCITY" />
         </node>
       </node>
       <node concept="12nEzJ" id="4bjBXGrydMy" role="3caO6$">
@@ -743,12 +743,12 @@
       </node>
       <node concept="3Oe2Ik" id="4bjBXGrydPm" role="3OfFNq">
         <node concept="3Oe$u_" id="4bjBXGrydPn" role="3$nDjG">
-          <ref role="3O0p26" to="alhp:4bjBXGry806" resolve="from" />
+          <ref role="3O0p26" to="alhp:4bjBXGry806" resolve="fromCity" />
         </node>
       </node>
       <node concept="3Oe2Ik" id="4bjBXGrydPo" role="3OfFNq">
         <node concept="3Oe$u_" id="4bjBXGrydPp" role="3$nDjG">
-          <ref role="3O0p26" to="alhp:4bjBXGry824" resolve="to" />
+          <ref role="3O0p26" to="alhp:4bjBXGry824" resolve="toCity" />
         </node>
       </node>
       <node concept="3Oe2In" id="4bjBXGrydPq" role="3OfFNq">
@@ -972,12 +972,12 @@
         </node>
         <node concept="3Oe2Ik" id="4bjBXGrydRk" role="3OfFNq">
           <node concept="3Oe$u_" id="4bjBXGrydRl" role="3$nDjG">
-            <ref role="3O0p26" to="alhp:4bjBXGry806" resolve="from" />
+            <ref role="3O0p26" to="alhp:4bjBXGry806" resolve="fromCity" />
           </node>
         </node>
         <node concept="3Oe2Ik" id="4bjBXGrydRm" role="3OfFNq">
           <node concept="3Oe$u_" id="4bjBXGrydRn" role="3$nDjG">
-            <ref role="3O0p26" to="alhp:4bjBXGry824" resolve="to" />
+            <ref role="3O0p26" to="alhp:4bjBXGry824" resolve="toCity" />
           </node>
         </node>
         <node concept="3Oe2In" id="4bjBXGrydRo" role="3OfFNq">
@@ -1360,7 +1360,7 @@
           <property role="PiFy3" value="12" />
         </node>
         <node concept="3Oe$u_" id="4bjBXGrydVk" role="3$nDjG">
-          <ref role="3O0p26" to="alhp:4bjBXGry806" resolve="from" />
+          <ref role="3O0p26" to="alhp:4bjBXGry806" resolve="fromCity" />
         </node>
       </node>
       <node concept="3Oe2Ik" id="4bjBXGrydVl" role="3OfFNq">
@@ -1368,7 +1368,7 @@
           <property role="PiFy3" value="12" />
         </node>
         <node concept="3Oe$u_" id="4bjBXGrydVn" role="3$nDjG">
-          <ref role="3O0p26" to="alhp:4bjBXGry824" resolve="to" />
+          <ref role="3O0p26" to="alhp:4bjBXGry824" resolve="toCity" />
         </node>
       </node>
       <node concept="3Oe2In" id="4bjBXGrydVo" role="3OfFNq">

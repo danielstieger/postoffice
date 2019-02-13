@@ -334,7 +334,7 @@
       </node>
     </node>
     <node concept="1bOX9e" id="4bjBXGry806" role="TxmiU">
-      <property role="2RkwnN" value="from" />
+      <property role="2RkwnN" value="fromCity" />
       <node concept="3Tm1VV" id="4bjBXGry80c" role="1B3o_S" />
       <node concept="2RoN1w" id="4bjBXGry80d" role="2RnVtd">
         <node concept="3wEZqW" id="4bjBXGry80e" role="3wFrgM" />
@@ -351,7 +351,7 @@
       </node>
     </node>
     <node concept="1bOX9e" id="4bjBXGry824" role="TxmiU">
-      <property role="2RkwnN" value="to" />
+      <property role="2RkwnN" value="toCity" />
       <node concept="3Tm1VV" id="4bjBXGry82a" role="1B3o_S" />
       <node concept="2RoN1w" id="4bjBXGry82b" role="2RnVtd">
         <node concept="3wEZqW" id="4bjBXGry82c" role="3wFrgM" />
