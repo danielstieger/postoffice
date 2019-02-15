@@ -312,8 +312,15 @@
           </node>
         </node>
       </node>
+      <node concept="2CJf3v" id="RUVcceG1dB" role="2CJdiS">
+        <property role="TrG5h" value="databaseDescription" />
+        <node concept="Xl_RD" id="RUVcceG1dD" role="2CJf0U">
+          <property role="Xl_RC" value="org.modellwerkstatt.manmap.runtime.MMOracleDescription" />
+        </node>
+      </node>
     </node>
     <node concept="2CPvp3" id="4bjBXGrB2mh" role="2CGBMS" />
+    <node concept="2CPvp3" id="RUVcceG19u" role="2CGBMS" />
     <node concept="2CJoq6" id="4bjBXGrB2fu" role="2CGBMS">
       <property role="TrG5h" value="FatToMySql" />
       <node concept="2CJf3v" id="4bjBXGrB2fv" role="2CJdiS">
@@ -397,7 +404,6 @@
           <node concept="Xl_RD" id="1YSLAaB7g8B" role="2CaGCA" />
         </node>
       </node>
-      <node concept="2CPvp3" id="1YSLAaB7g4m" role="2CJdiS" />
       <node concept="2CJf3v" id="6VW5G60I5jm" role="2CJdiS">
         <property role="TrG5h" value="databaseDescription" />
         <node concept="Xl_RD" id="6VW5G60I5jn" role="2CJf0U">
@@ -503,6 +509,12 @@
         </node>
         <node concept="Xl_RD" id="2RoKLt0pbfF" role="2CJf0U">
           <property role="Xl_RC" value="org.apache.tomcat.jdbc.pool.DataSource" />
+        </node>
+      </node>
+      <node concept="2CJf3v" id="RUVcceG1rb" role="2CJdiS">
+        <property role="TrG5h" value="databaseDescription" />
+        <node concept="Xl_RD" id="RUVcceG1rc" role="2CJf0U">
+          <property role="Xl_RC" value="org.modellwerkstatt.manmap.runtime.MMOracleDescription" />
         </node>
       </node>
     </node>

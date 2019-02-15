@@ -66,4 +66,11 @@
 	<delete dir="work"/>
     <delete dir="dist"/>
   </target>
+  
+    <target name="redeploy" depends="default">
+  	<copy todir="/Users/danielstieger/stuff/green/webapps/${appName}">
+  		<fileset dir="work" />
+  	</copy>
+  </target>
+  
 </project>
