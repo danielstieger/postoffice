@@ -5,3 +5,5 @@ postoffice/solutions/postoffice/source_gen/org/modellwerkstatt/postoffice/all/Da
 ```
 
 More information on moware can be found at our [homepage](https://www.modellwerkstatt.org/moware.html). For more information feel free to contact us at [info@modellwerkstatt.org](mailto:info@modellwerkstatt.org)
+
+We packaged also some configurations to run this application on an oracle DB instance. The oracle express edition is also freely available for demo purposes.  

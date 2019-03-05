@@ -41,6 +41,8 @@
       </concept>
       <concept id="3146313690717155301" name="org.modellwerkstatt.objectflow.structure.LabelSpecification" flags="ng" index="2kzhL4">
         <property id="1440642197017487963" name="hotkey" index="il5CD" />
+        <reference id="8554054623629703239" name="platform" index="2C2Acs" />
+        <child id="1440642197017487722" name="icon" index="il5$o" />
         <child id="1440642197017487671" name="text" index="il5_5" />
       </concept>
       <concept id="3146313690715522043" name="org.modellwerkstatt.objectflow.structure.Platform" flags="ng" index="2kDv1q">
@@ -762,12 +764,30 @@
           <property role="Xl_RC" value="Ok" />
         </node>
       </node>
+      <node concept="2kzhL4" id="4LNQ1dLG_wK" role="2kzgdm">
+        <ref role="2C2Acs" node="4bjBXGrydG9" resolve="MDE" />
+        <node concept="Xl_RD" id="4LNQ1dLG_wL" role="il5_5">
+          <property role="Xl_RC" value="Ok" />
+        </node>
+        <node concept="Xl_RD" id="4LNQ1dLG_Ci" role="il5$o">
+          <property role="Xl_RC" value="done" />
+        </node>
+      </node>
     </node>
     <node concept="il5_x" id="4bjBXGrydSf" role="2kzhMJ">
       <property role="TrG5h" value="SAVE_CLOSE" />
       <node concept="2kzhL4" id="4bjBXGrydSg" role="2kzgdm">
         <node concept="Xl_RD" id="4bjBXGrydSi" role="il5_5">
           <property role="Xl_RC" value="Save &amp; Close" />
+        </node>
+      </node>
+      <node concept="2kzhL4" id="4LNQ1dLG_xl" role="2kzgdm">
+        <ref role="2C2Acs" node="4bjBXGrydG9" resolve="MDE" />
+        <node concept="Xl_RD" id="4LNQ1dLG_xm" role="il5_5">
+          <property role="Xl_RC" value="Save" />
+        </node>
+        <node concept="Xl_RD" id="4LNQ1dLG__B" role="il5$o">
+          <property role="Xl_RC" value="check_box" />
         </node>
       </node>
     </node>
@@ -779,6 +799,15 @@
           <property role="Xl_RC" value="Next &gt;&gt;" />
         </node>
       </node>
+      <node concept="2kzhL4" id="4LNQ1dLG_xG" role="2kzgdm">
+        <ref role="2C2Acs" node="4bjBXGrydG9" resolve="MDE" />
+        <node concept="Xl_RD" id="4LNQ1dLG_xH" role="il5_5">
+          <property role="Xl_RC" value="NEXT" />
+        </node>
+        <node concept="Xl_RD" id="4LNQ1dLG_zP" role="il5$o">
+          <property role="Xl_RC" value="navigate_next" />
+        </node>
+      </node>
     </node>
     <node concept="il5_x" id="4bjBXGrydVF" role="2kzhMJ">
       <property role="TrG5h" value="BACK" />
@@ -788,14 +817,23 @@
           <property role="Xl_RC" value="&lt;&lt; Back" />
         </node>
       </node>
+      <node concept="2kzhL4" id="4LNQ1dLG_y3" role="2kzgdm">
+        <ref role="2C2Acs" node="4bjBXGrydG9" resolve="MDE" />
+        <node concept="Xl_RD" id="4LNQ1dLG_y4" role="il5_5">
+          <property role="Xl_RC" value="BACK" />
+        </node>
+        <node concept="Xl_RD" id="4LNQ1dLG_$u" role="il5$o">
+          <property role="Xl_RC" value="navigate_before" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="2MVcZ9" id="4bjBXGryKDh">
     <property role="TrG5h" value="ParcelApp" />
-    <ref role="2WPtWl" node="1$$A7zM8Bg6" resolve="FX8_MySql" />
+    <ref role="2WPtWl" node="6hyGm0IF50R" resolve="FX8_Oracle" />
     <node concept="33WYYh" id="4bjBXGryKUs" role="2N77jT">
-      <ref role="2_Hrwf" to="w2mn:4bjBXGrydOT" resolve="ParcelProcess" />
-      <ref role="2_Hrw8" to="w2mn:4bjBXGrydTp" resolve="Search Parcel" />
+      <ref role="2_Hrwf" to="w2mn:4LNQ1dLJ5PO" resolve="ParcelProcess" />
+      <ref role="2_Hrw8" to="w2mn:4LNQ1dLJ5TS" resolve="Search Parcel" />
       <node concept="10Nm6u" id="4bjBXGryL5j" role="2_HrWp" />
     </node>
     <node concept="2MWAvL" id="4bjBXGryKDi" role="2A_d42">
@@ -819,9 +857,38 @@
     </node>
     <node concept="2$ntO6" id="4bjBXGrHfR9" role="2$nsuY">
       <node concept="33WYYh" id="4bjBXGrHfRa" role="2$ntUL">
-        <ref role="2_Hrwf" to="w2mn:4bjBXGrydOT" resolve="ParcelProcess" />
-        <ref role="2_Hrw8" to="w2mn:4bjBXGrydTp" resolve="Search Parcel" />
+        <ref role="2_Hrwf" to="w2mn:4LNQ1dLJ5PO" resolve="ParcelProcess" />
+        <ref role="2_Hrw8" to="w2mn:4LNQ1dLJ5TS" resolve="Search Parcel" />
         <node concept="10Nm6u" id="4bjBXGrHfZ2" role="2_HrWp" />
+      </node>
+    </node>
+  </node>
+  <node concept="2CG7Z0" id="6hyGm0IF50R">
+    <property role="TrG5h" value="FX8_Oracle" />
+    <property role="2320hu" value="2018-07-23T14:08:19.761+02:00" />
+    <node concept="2CJf3v" id="6hyGm0IF50S" role="2CGBMS">
+      <property role="TrG5h" value="platform" />
+      <node concept="2CJf1O" id="6hyGm0IF50T" role="2CJ4_l">
+        <node concept="Xl_RD" id="6hyGm0IF50U" role="2DqwMp">
+          <property role="Xl_RC" value="SUGAR" />
+        </node>
+        <node concept="Xl_RD" id="6hyGm0IF50V" role="2DqwMv">
+          <property role="Xl_RC" value="0" />
+        </node>
+      </node>
+      <node concept="Xl_RD" id="6hyGm0IF50W" role="2CJf0U">
+        <property role="Xl_RC" value="org.modellwerkstatt.postoffice.app.Ressources_FX8" />
+      </node>
+    </node>
+    <node concept="2CJ4_Q" id="6hyGm0IF50X" role="2CGBMS">
+      <ref role="2CJ4_N" node="7HkVpVc$jk8" resolve="FatToOracle" />
+    </node>
+    <node concept="2CJ4_Q" id="6hyGm0IF50Y" role="2CGBMS">
+      <ref role="2CJ4_N" node="4bjBXGrB15p" resolve="Fx8_NoPrint" />
+    </node>
+    <node concept="20ptWn" id="6hyGm0IF50Z" role="20ptHX">
+      <node concept="Xl_RD" id="6hyGm0IF510" role="20ptNC">
+        <property role="Xl_RC" value="org.modellwerkstatt.postoffice" />
       </node>
     </node>
   </node>
