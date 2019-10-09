@@ -9,9 +9,22 @@
   <imports>
     <import index="w2mn" ref="r:b4875332-3229-436b-afe7-85cc38a152da(org.modellwerkstatt.postoffice.all)" />
     <import index="alhp" ref="r:885ce6d8-3033-48be-9d55-4b4e587fab65(org.modellwerkstatt.postoffice.entity)" />
+    <import index="w7gk" ref="r:22abd22f-3c78-4514-b7c6-da1d82c38fe2(org.modellwerkstatt.manmap.runtime)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
+        <child id="1068498886297" name="rValue" index="37vLTx" />
+        <child id="1068498886295" name="lValue" index="37vLTJ" />
+      </concept>
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
+        <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
+      <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
+        <child id="1145553007750" name="creator" index="2ShVmc" />
+      </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
@@ -19,6 +32,14 @@
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
+      <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
+        <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
+      </concept>
+      <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
+      <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
+        <child id="5680397130376446158" name="type" index="1tU5fm" />
+      </concept>
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -28,10 +49,21 @@
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
         <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
+        <child id="1068499141038" name="actualArgument" index="37wK5m" />
+      </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
     </language>
     <language id="ec097fca-5b84-41f2-847d-6a5690cae277" name="org.modellwerkstatt.objectflow">
       <concept id="406105322043152820" name="org.modellwerkstatt.objectflow.structure.ComponentsScanning" flags="ng" index="20ptWn">
         <child id="406105322043152971" name="componentBaseName" index="20ptNC" />
+      </concept>
+      <concept id="7926373352206300571" name="org.modellwerkstatt.objectflow.structure.OperationCall" flags="ng" index="1odsa">
+        <reference id="7926373352206300596" name="runtimeHandledObject" index="1ods_" />
       </concept>
       <concept id="1440642197017487130" name="org.modellwerkstatt.objectflow.structure.StaticRessources" flags="ng" index="il5tC">
         <child id="3146313690717155086" name="labels" index="2kzhMJ" />
@@ -83,15 +115,27 @@
         <child id="478945708937917662" name="name" index="2DlbDb" />
         <child id="478945708937917664" name="value" index="2DlbDP" />
       </concept>
+      <concept id="4779674245164262437" name="org.modellwerkstatt.objectflow.structure.UserEnvironmentParameter" flags="ng" index="2Rjrh3" />
       <concept id="4533072425307838443" name="org.modellwerkstatt.objectflow.structure.StatusConstReference" flags="ng" index="2XvMaL">
         <reference id="4533072425307838444" name="status" index="2XvMaQ" />
         <reference id="1707329006119989962" name="element" index="1Vchh_" />
       </concept>
+      <concept id="3585259589779248202" name="org.modellwerkstatt.objectflow.structure.MultiString" flags="ng" index="35AVbj">
+        <property id="3585259589779248406" name="formatString" index="35AVef" />
+        <child id="3585259589780682365" name="arguments" index="35Gt3$" />
+      </concept>
       <concept id="7604036740764640594" name="org.modellwerkstatt.objectflow.structure.VariantDeclaration" flags="ng" index="3hNl9M" />
+      <concept id="7192042020164640430" name="org.modellwerkstatt.objectflow.structure.ContainerVariable" flags="ng" index="3ulXEM" />
+      <concept id="7192042020164640426" name="org.modellwerkstatt.objectflow.structure.Container" flags="ng" index="3ulXEQ">
+        <child id="7192042020164640432" name="variable" index="3ulXEG" />
+      </concept>
+      <concept id="7192042020165155288" name="org.modellwerkstatt.objectflow.structure.ContainerVariableReference" flags="ng" index="3urNR4" />
     </language>
     <language id="64adc67c-5fcf-45f5-82db-6a6771963d93" name="org.modellwerkstatt.dataux">
+      <concept id="4920377772573248079" name="org.modellwerkstatt.dataux.structure.TileInitFunction" flags="ig" index="2aJ7Jc" />
       <concept id="2781909770750560564" name="org.modellwerkstatt.dataux.structure.AppTile" flags="ng" index="2$ntO6">
         <child id="2781909770750560899" name="action" index="2$ntUL" />
+        <child id="2781909770750561024" name="tileLabel" index="2$ntWM" />
         <child id="2781909770750561241" name="tileColor" index="2$ntZF" />
       </concept>
       <concept id="3226612376922221452" name="org.modellwerkstatt.dataux.structure.IModule" flags="ng" index="2A_d5g">
@@ -99,6 +143,7 @@
         <child id="3226612376922221534" name="options" index="2A_d42" />
       </concept>
       <concept id="7784207101901652180" name="org.modellwerkstatt.dataux.structure.AppUiModule" flags="ng" index="2MVcZ9">
+        <child id="4920377772573251431" name="tileInit" index="2aJ6r$" />
         <child id="2781909770750563212" name="tiles" index="2$nsuY" />
         <child id="7784207101902499646" name="authFunction" index="2MZU0z" />
         <child id="7784207101904780260" name="mainMenu" index="2N77jT" />
@@ -116,6 +161,9 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+    </language>
+    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
     </language>
   </registry>
   <node concept="2CG7Z0" id="1$$A7zM8Bg6">
@@ -724,6 +772,28 @@
         <ref role="2CJ4_N" node="21a32Cmm3Sq" resolve="MoWare_BasicInfrastructure" />
       </node>
     </node>
+    <node concept="2CPvp3" id="40ZzJ0VH17I" role="2CGBMS" />
+    <node concept="2CJoq6" id="40ZzJ0VH13G" role="2CGBMS">
+      <property role="TrG5h" value="Vaadin_NoPrint" />
+      <node concept="2CJf3v" id="5$BCFrw7$Bw" role="2CJdiS">
+        <property role="TrG5h" value="authentification" />
+        <node concept="Xl_RD" id="5$BCFrw7$By" role="2CJf0U">
+          <property role="Xl_RC" value="org.modellwerkstatt.vaadinforms.auth.VSimpleLoginWindowAuth" />
+        </node>
+      </node>
+      <node concept="2CJf3v" id="1NjnH06l6J4" role="2CJdiS">
+        <property role="TrG5h" value="appFactory" />
+        <node concept="Xl_RD" id="1NjnH06l6J6" role="2CJf0U">
+          <property role="Xl_RC" value="org.modellwerkstatt.vaadinforms.windows.VUiFactory" />
+        </node>
+      </node>
+      <node concept="2CJ4_Q" id="40ZzJ0VH13P" role="2CJdiS">
+        <ref role="2CJ4_N" node="7HkVpVc$sx7" resolve="FakeLockNBusNPrint" />
+      </node>
+      <node concept="2CJ4_Q" id="40ZzJ0VH13Q" role="2CJdiS">
+        <ref role="2CJ4_N" node="21a32Cmm3Sq" resolve="MoWare_BasicInfrastructure" />
+      </node>
+    </node>
     <node concept="2CPvp3" id="4bjBXGrFZA7" role="2CGBMS" />
     <node concept="2CJoq6" id="4bjBXGrFZuW" role="2CGBMS">
       <property role="TrG5h" value="H2_NoPrint" />
@@ -840,6 +910,10 @@
   <node concept="2MVcZ9" id="4bjBXGryKDh">
     <property role="TrG5h" value="PostofficeApp" />
     <ref role="2WPtWl" node="1$$A7zM8Bg6" resolve="FX8_MySql" />
+    <node concept="3ulXEM" id="40ZzJ0VGKXd" role="3ulXEG">
+      <property role="TrG5h" value="cnt" />
+      <node concept="10Oyi0" id="40ZzJ0VGKXw" role="1tU5fm" />
+    </node>
     <node concept="33WYYh" id="4bjBXGryKUs" role="2N77jT">
       <ref role="2_Hrwf" to="w2mn:4LNQ1dLJ5PO" resolve="DeliveryNoteProcess" />
       <ref role="2_Hrw8" to="w2mn:4LNQ1dLJ5TS" resolve="Search Notes" />
@@ -862,6 +936,39 @@
     </node>
     <node concept="2MWq9S" id="4bjBXGryKDm" role="2MZU0z">
       <node concept="3clFbS" id="4bjBXGryKDn" role="2VODD2">
+        <node concept="3clFbF" id="40ZzJ0VE6U6" role="3cqZAp">
+          <node concept="2OqwBi" id="40ZzJ0VE6Ve" role="3clFbG">
+            <node concept="2Rjrh3" id="40ZzJ0VE6U4" role="2Oq$k0" />
+            <node concept="liA8E" id="40ZzJ0VE6XS" role="2OqNvi">
+              <ref role="37wK5l" to="w7gk:2BF5kUGSRAy" resolve="setUserId" />
+              <node concept="3cmrfG" id="40ZzJ0VE6YY" role="37wK5m">
+                <property role="3cmrfH" value="1" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="40ZzJ0VE72x" role="3cqZAp">
+          <node concept="2OqwBi" id="40ZzJ0VE74x" role="3clFbG">
+            <node concept="2Rjrh3" id="40ZzJ0VE72v" role="2Oq$k0" />
+            <node concept="liA8E" id="40ZzJ0VE78l" role="2OqNvi">
+              <ref role="37wK5l" to="w7gk:2BF5kUGT7He" resolve="setUserName" />
+              <node concept="Xl_RD" id="40ZzJ0VE79G" role="37wK5m">
+                <property role="Xl_RC" value="Dan" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="40ZzJ0VE7fj" role="3cqZAp">
+          <node concept="2OqwBi" id="40ZzJ0VE7hD" role="3clFbG">
+            <node concept="2Rjrh3" id="40ZzJ0VE7fh" role="2Oq$k0" />
+            <node concept="liA8E" id="40ZzJ0VE7kI" role="2OqNvi">
+              <ref role="37wK5l" to="w7gk:54mRB2jNQxU" resolve="setDynamicStatusInfo" />
+              <node concept="Xl_RD" id="40ZzJ0VE7mR" role="37wK5m">
+                <property role="Xl_RC" value="Daniel" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="4bjBXGryKPE" role="3cqZAp">
           <node concept="3clFbT" id="4bjBXGryKPD" role="3clFbG">
             <property role="3clFbU" value="true" />
@@ -879,6 +986,12 @@
         <ref role="2XvMaQ" to="alhp:4bjBXGrycCj" resolve="Status" />
         <ref role="1Vchh_" to="alhp:40ZzJ0Vshxs" resolve="on_way" />
       </node>
+      <node concept="35AVbj" id="40ZzJ0VGKV0" role="2$ntWM">
+        <property role="35AVef" value="Notes available (%d)\nSearch Notes" />
+        <node concept="3urNR4" id="40ZzJ0VGL4v" role="35Gt3$">
+          <ref role="3cqZAo" node="40ZzJ0VGKXd" resolve="cnt" />
+        </node>
+      </node>
     </node>
     <node concept="2$ntO6" id="40ZzJ0Vu8jA" role="2$nsuY">
       <node concept="33WYYh" id="40ZzJ0Vu8jB" role="2$ntUL">
@@ -889,6 +1002,32 @@
       <node concept="2XvMaL" id="40ZzJ0Vz_PV" role="2$ntZF">
         <ref role="2XvMaQ" to="alhp:4bjBXGrycCj" resolve="Status" />
         <ref role="1Vchh_" to="alhp:4bjBXGrycFU" resolve="new" />
+      </node>
+      <node concept="35AVbj" id="40ZzJ0VGL56" role="2$ntWM">
+        <property role="35AVef" value="Create Note\nrandomly initialized" />
+      </node>
+    </node>
+    <node concept="2aJ7Jc" id="40ZzJ0VGKuI" role="2aJ6r$">
+      <node concept="3clFbS" id="40ZzJ0VGKuJ" role="2VODD2">
+        <node concept="3clFbF" id="40ZzJ0VGKY3" role="3cqZAp">
+          <node concept="37vLTI" id="40ZzJ0VGKY5" role="3clFbG">
+            <node concept="2OqwBi" id="40ZzJ0VGKH6" role="37vLTx">
+              <node concept="1odsa" id="40ZzJ0VGKwc" role="2Oq$k0">
+                <ref role="1ods_" to="w2mn:4LNQ1dLJ5O4" resolve="NoteRepository" />
+                <ref role="37wK5l" to="w2mn:4LNQ1dLJ5V6" resolve="findAllNotes" />
+                <node concept="2ShNRf" id="40ZzJ0VGKAj" role="37wK5m">
+                  <node concept="1pGfFk" id="40ZzJ0VGK_T" role="2ShVmc">
+                    <ref role="37wK5l" to="w2mn:4LNQ1dLJ5TX" resolve="SearchFilter" />
+                  </node>
+                </node>
+              </node>
+              <node concept="34oBXx" id="40ZzJ0VGKR5" role="2OqNvi" />
+            </node>
+            <node concept="3urNR4" id="40ZzJ0VGL1j" role="37vLTJ">
+              <ref role="3cqZAo" node="40ZzJ0VGKXd" resolve="cnt" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
@@ -917,6 +1056,36 @@
     </node>
     <node concept="20ptWn" id="6hyGm0IF50Z" role="20ptHX">
       <node concept="Xl_RD" id="6hyGm0IF510" role="20ptNC">
+        <property role="Xl_RC" value="org.modellwerkstatt.postoffice" />
+      </node>
+    </node>
+  </node>
+  <node concept="2CG7Z0" id="40ZzJ0VH0V0">
+    <property role="TrG5h" value="Vaadin_MySql" />
+    <property role="2320hu" value="2018-05-07T13:36:07.962+02:00" />
+    <node concept="2CJf3v" id="40ZzJ0VH0Xq" role="2CGBMS">
+      <property role="TrG5h" value="platform" />
+      <node concept="2CJf1O" id="40ZzJ0VH0Xr" role="2CJ4_l">
+        <node concept="Xl_RD" id="40ZzJ0VH0Xs" role="2DqwMp">
+          <property role="Xl_RC" value="SUGAR" />
+        </node>
+        <node concept="Xl_RD" id="40ZzJ0VH0Xt" role="2DqwMv">
+          <property role="Xl_RC" value="0" />
+        </node>
+      </node>
+      <node concept="Xl_RD" id="40ZzJ0VH0Xu" role="2CJf0U">
+        <property role="Xl_RC" value="org.modellwerkstatt.postoffice.app.Ressources_FX8" />
+      </node>
+    </node>
+    <node concept="2CJ4_Q" id="40ZzJ0VH0V6" role="2CGBMS">
+      <ref role="2CJ4_N" node="4bjBXGrG0uH" resolve="TomcatToMySQL" />
+    </node>
+    <node concept="2CJ4_Q" id="40ZzJ0VH0V7" role="2CGBMS">
+      <ref role="2CJ4_N" node="40ZzJ0VH13G" resolve="Vaadin_NoPrint" />
+    </node>
+    <node concept="2CPvp3" id="40ZzJ0VH0V8" role="2CGBMS" />
+    <node concept="20ptWn" id="40ZzJ0VH0V9" role="20ptHX">
+      <node concept="Xl_RD" id="40ZzJ0VH0Va" role="20ptNC">
         <property role="Xl_RC" value="org.modellwerkstatt.postoffice" />
       </node>
     </node>

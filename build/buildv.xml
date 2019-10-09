@@ -28,20 +28,19 @@
   <include file="${mowarePluginHomeDir}/ofassembly/moware.xml" as="moware"/>
 
   <!-- **** app specific definitions **************************************************************** -->
-  <property name="appName"              value="ParcelApp" />
+  <property name="appName"              value="VaadinParcelApp" />
   <property name="appMainclass"         value="org.modellwerkstatt.postoffice.app.PostofficeApp" />
-  <property name="appConfiguration"     value="org/modellwerkstatt/postoffice/app/Mde_MySql.xml" /> 
+  <property name="appConfiguration"     value="org/modellwerkstatt/postoffice/app/Vaadin_MySql.xml" /> 
   <property name="appHomeScreen"        value="${appName}" />
   <property name="appBuildVersion"      value="2.0" />
-
+  	
   <!-- **** solutions to incorporate in this build ************************************************** -->
   <property name="solultionSimpleGen"   value="${baseProjectHome}/solutions/postoffice/classes_gen" />
 
 
 
 
-  <target name="default" depends="clean, moware.h2forms">
-    
+   <target name="default" depends="clean, moware.vaadinforms">  
     <mkdir dir="work/WEB-INF/classes"/>
     <copy todir="work/WEB-INF/classes">
       <fileset dir="${solultionSimpleGen}" />
@@ -59,11 +58,11 @@
       </manifest>
     </jar>
   </target>
-  
-    <target name="redeploy" depends="default">
-  	<copy todir="/Users/danielstieger/stuff/green/webapps/${appName}">
-  		<fileset dir="work" />
-  	</copy>
+
+  <target name="clean" description="Delete old work and dist directories">
+	<delete dir="work"/>
+    <delete dir="dist"/>
   </target>
+
   
 </project>
