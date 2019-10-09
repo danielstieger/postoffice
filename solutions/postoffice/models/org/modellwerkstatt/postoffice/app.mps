@@ -8,6 +8,7 @@
   </languages>
   <imports>
     <import index="w2mn" ref="r:b4875332-3229-436b-afe7-85cc38a152da(org.modellwerkstatt.postoffice.all)" />
+    <import index="alhp" ref="r:885ce6d8-3033-48be-9d55-4b4e587fab65(org.modellwerkstatt.postoffice.entity)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -82,11 +83,16 @@
         <child id="478945708937917662" name="name" index="2DlbDb" />
         <child id="478945708937917664" name="value" index="2DlbDP" />
       </concept>
+      <concept id="4533072425307838443" name="org.modellwerkstatt.objectflow.structure.StatusConstReference" flags="ng" index="2XvMaL">
+        <reference id="4533072425307838444" name="status" index="2XvMaQ" />
+        <reference id="1707329006119989962" name="element" index="1Vchh_" />
+      </concept>
       <concept id="7604036740764640594" name="org.modellwerkstatt.objectflow.structure.VariantDeclaration" flags="ng" index="3hNl9M" />
     </language>
     <language id="64adc67c-5fcf-45f5-82db-6a6771963d93" name="org.modellwerkstatt.dataux">
       <concept id="2781909770750560564" name="org.modellwerkstatt.dataux.structure.AppTile" flags="ng" index="2$ntO6">
         <child id="2781909770750560899" name="action" index="2$ntUL" />
+        <child id="2781909770750561241" name="tileColor" index="2$ntZF" />
       </concept>
       <concept id="3226612376922221452" name="org.modellwerkstatt.dataux.structure.IModule" flags="ng" index="2A_d5g">
         <reference id="1335996842166433049" name="configuration" index="2WPtWl" />
@@ -767,10 +773,7 @@
       <node concept="2kzhL4" id="4LNQ1dLG_wK" role="2kzgdm">
         <ref role="2C2Acs" node="4bjBXGrydG9" resolve="MDE" />
         <node concept="Xl_RD" id="4LNQ1dLG_wL" role="il5_5">
-          <property role="Xl_RC" value="Ok" />
-        </node>
-        <node concept="Xl_RD" id="4LNQ1dLG_Ci" role="il5$o">
-          <property role="Xl_RC" value="done" />
+          <property role="Xl_RC" value="OK" />
         </node>
       </node>
     </node>
@@ -784,10 +787,7 @@
       <node concept="2kzhL4" id="4LNQ1dLG_xl" role="2kzgdm">
         <ref role="2C2Acs" node="4bjBXGrydG9" resolve="MDE" />
         <node concept="Xl_RD" id="4LNQ1dLG_xm" role="il5_5">
-          <property role="Xl_RC" value="Save" />
-        </node>
-        <node concept="Xl_RD" id="4LNQ1dLG__B" role="il5$o">
-          <property role="Xl_RC" value="check_box" />
+          <property role="Xl_RC" value="SAVE" />
         </node>
       </node>
     </node>
@@ -827,23 +827,37 @@
         </node>
       </node>
     </node>
+    <node concept="il5_x" id="40ZzJ0VAGCt" role="2kzhMJ">
+      <property role="TrG5h" value="SCAN" />
+      <node concept="2kzhL4" id="40ZzJ0VAGCu" role="2kzgdm">
+        <property role="il5CD" value="UPD_FF1" />
+        <node concept="Xl_RD" id="40ZzJ0VAGCv" role="il5_5">
+          <property role="Xl_RC" value="SCAN" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="2MVcZ9" id="4bjBXGryKDh">
-    <property role="TrG5h" value="ParcelApp" />
-    <ref role="2WPtWl" node="6hyGm0IF50R" resolve="FX8_Oracle" />
+    <property role="TrG5h" value="PostofficeApp" />
+    <ref role="2WPtWl" node="1$$A7zM8Bg6" resolve="FX8_MySql" />
     <node concept="33WYYh" id="4bjBXGryKUs" role="2N77jT">
-      <ref role="2_Hrwf" to="w2mn:4LNQ1dLJ5PO" resolve="ParcelProcess" />
-      <ref role="2_Hrw8" to="w2mn:4LNQ1dLJ5TS" resolve="Search Parcel" />
+      <ref role="2_Hrwf" to="w2mn:4LNQ1dLJ5PO" resolve="DeliveryNoteProcess" />
+      <ref role="2_Hrw8" to="w2mn:4LNQ1dLJ5TS" resolve="Search Notes" />
       <node concept="10Nm6u" id="4bjBXGryL5j" role="2_HrWp" />
+    </node>
+    <node concept="33WYYh" id="40ZzJ0Vu8lx" role="2N77jT">
+      <ref role="2_Hrwf" to="w2mn:4LNQ1dLJ5PO" resolve="DeliveryNoteProcess" />
+      <ref role="2_Hrw8" to="w2mn:4LNQ1dLJ5SR" resolve="Create Random Note" />
+      <node concept="10Nm6u" id="40ZzJ0Vu8ly" role="2_HrWp" />
     </node>
     <node concept="2MWAvL" id="4bjBXGryKDi" role="2A_d42">
       <node concept="Xl_RD" id="4bjBXGryKJD" role="2MWAvM">
-        <property role="Xl_RC" value="1.0" />
+        <property role="Xl_RC" value="2.0" />
       </node>
     </node>
     <node concept="2MZaQk" id="4bjBXGryKDk" role="2A_d42">
       <node concept="Xl_RD" id="4bjBXGryKKU" role="2MZaQn">
-        <property role="Xl_RC" value="Parcel Application" />
+        <property role="Xl_RC" value="Postoffice App" />
       </node>
     </node>
     <node concept="2MWq9S" id="4bjBXGryKDm" role="2MZU0z">
@@ -857,9 +871,24 @@
     </node>
     <node concept="2$ntO6" id="4bjBXGrHfR9" role="2$nsuY">
       <node concept="33WYYh" id="4bjBXGrHfRa" role="2$ntUL">
-        <ref role="2_Hrwf" to="w2mn:4LNQ1dLJ5PO" resolve="ParcelProcess" />
-        <ref role="2_Hrw8" to="w2mn:4LNQ1dLJ5TS" resolve="Search Parcel" />
+        <ref role="2_Hrwf" to="w2mn:4LNQ1dLJ5PO" resolve="DeliveryNoteProcess" />
+        <ref role="2_Hrw8" to="w2mn:4LNQ1dLJ5TS" resolve="Search Notes" />
         <node concept="10Nm6u" id="4bjBXGrHfZ2" role="2_HrWp" />
+      </node>
+      <node concept="2XvMaL" id="40ZzJ0Vz_SL" role="2$ntZF">
+        <ref role="2XvMaQ" to="alhp:4bjBXGrycCj" resolve="Status" />
+        <ref role="1Vchh_" to="alhp:40ZzJ0Vshxs" resolve="on_way" />
+      </node>
+    </node>
+    <node concept="2$ntO6" id="40ZzJ0Vu8jA" role="2$nsuY">
+      <node concept="33WYYh" id="40ZzJ0Vu8jB" role="2$ntUL">
+        <ref role="2_Hrwf" to="w2mn:4LNQ1dLJ5PO" resolve="DeliveryNoteProcess" />
+        <ref role="2_Hrw8" to="w2mn:4LNQ1dLJ5SR" resolve="Create Random Note" />
+        <node concept="10Nm6u" id="40ZzJ0Vu8kx" role="2_HrWp" />
+      </node>
+      <node concept="2XvMaL" id="40ZzJ0Vz_PV" role="2$ntZF">
+        <ref role="2XvMaQ" to="alhp:4bjBXGrycCj" resolve="Status" />
+        <ref role="1Vchh_" to="alhp:4bjBXGrycFU" resolve="new" />
       </node>
     </node>
   </node>
