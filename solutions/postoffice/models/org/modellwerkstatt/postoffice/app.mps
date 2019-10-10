@@ -120,6 +120,9 @@
         <reference id="4533072425307838444" name="status" index="2XvMaQ" />
         <reference id="1707329006119989962" name="element" index="1Vchh_" />
       </concept>
+      <concept id="3887124829263120988" name="org.modellwerkstatt.objectflow.structure.Action" flags="ng" index="309pON">
+        <reference id="96922280161183875" name="customLabel" index="3uz5Vf" />
+      </concept>
       <concept id="3585259589779248202" name="org.modellwerkstatt.objectflow.structure.MultiString" flags="ng" index="35AVbj">
         <property id="3585259589779248406" name="formatString" index="35AVef" />
         <child id="3585259589780682365" name="arguments" index="35Gt3$" />
@@ -906,6 +909,14 @@
         </node>
       </node>
     </node>
+    <node concept="il5_x" id="UwRB1_FvDq" role="2kzhMJ">
+      <property role="TrG5h" value="SEARCH_NOTES" />
+      <node concept="2kzhL4" id="UwRB1_FvDr" role="2kzgdm">
+        <node concept="Xl_RD" id="UwRB1_FvDs" role="il5_5">
+          <property role="Xl_RC" value="Search Notes" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="2MVcZ9" id="4bjBXGryKDh">
     <property role="TrG5h" value="PostofficeApp" />
@@ -980,6 +991,7 @@
       <node concept="33WYYh" id="4bjBXGrHfRa" role="2$ntUL">
         <ref role="2_Hrwf" to="w2mn:4LNQ1dLJ5PO" resolve="DeliveryNoteProcess" />
         <ref role="2_Hrw8" to="w2mn:4LNQ1dLJ5TS" resolve="Search Notes" />
+        <ref role="3uz5Vf" node="UwRB1_FvDq" resolve="SEARCH_NOTES" />
         <node concept="10Nm6u" id="4bjBXGrHfZ2" role="2_HrWp" />
       </node>
       <node concept="2XvMaL" id="40ZzJ0Vz_SL" role="2$ntZF">
