@@ -98,6 +98,9 @@
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
+      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
+        <child id="1160998896846" name="condition" index="1gVkn0" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -127,6 +130,7 @@
       <concept id="6525155817176754757" name="org.modellwerkstatt.objectflow.structure.CommandVoidStatementList" flags="ig" index="20qIzx" />
       <concept id="7926373352206300571" name="org.modellwerkstatt.objectflow.structure.OperationCall" flags="ng" index="1odsa">
         <reference id="7926373352206300596" name="runtimeHandledObject" index="1ods_" />
+        <child id="3262649880243657037" name="sessionExpression" index="2f8TIa" />
       </concept>
       <concept id="1410680821326658964" name="org.modellwerkstatt.objectflow.structure.BPMetaReference" flags="ng" index="2dcwcJ">
         <reference id="1410680821326658966" name="businessProperty" index="2dcwcH" />
@@ -142,6 +146,10 @@
       </concept>
       <concept id="8086154250676608576" name="org.modellwerkstatt.objectflow.structure.SelectedObject" flags="ng" index="2IFXgM">
         <reference id="8086154250676616105" name="object" index="2IFZ7r" />
+      </concept>
+      <concept id="1335996842166371514" name="org.modellwerkstatt.objectflow.structure.OFXTestSuit" flags="ng" index="2WPaUQ">
+        <reference id="1335996842166433049" name="configuration" index="2WPtWl" />
+        <child id="6952410984685371541" name="content" index="3yMuLx" />
       </concept>
       <concept id="4533072425307838443" name="org.modellwerkstatt.objectflow.structure.StatusConstReference" flags="ng" index="2XvMaL">
         <reference id="4533072425307838444" name="status" index="2XvMaQ" />
@@ -181,6 +189,7 @@
         <child id="5770301300929026308" name="longDesc" index="2CNmdL" />
         <child id="5770301300929026304" name="shortDesc" index="2CNmdP" />
       </concept>
+      <concept id="3179794825395091428" name="org.modellwerkstatt.objectflow.structure.OFXTestNewSessionExpression" flags="ng" index="3er55J" />
       <concept id="271985905034983108" name="org.modellwerkstatt.objectflow.structure.DezimalLiteral" flags="ng" index="1mgVXT">
         <property id="271985905034983109" name="value" index="1mgVXS" />
       </concept>
@@ -216,6 +225,7 @@
       <concept id="7192042020165155254" name="org.modellwerkstatt.objectflow.structure.ContainerParamReference" flags="ng" index="3urNQE" />
       <concept id="7192042020165155288" name="org.modellwerkstatt.objectflow.structure.ContainerVariableReference" flags="ng" index="3urNR4" />
       <concept id="594565203027877250" name="org.modellwerkstatt.objectflow.structure.Session" flags="ng" index="3y28L$" />
+      <concept id="6952410984685067935" name="org.modellwerkstatt.objectflow.structure.OFXTestMethod" flags="ng" index="3yPF9F" />
       <concept id="5225022991485184063" name="org.modellwerkstatt.objectflow.structure.ViewObject" flags="ig" index="1YeyE5" />
     </language>
     <language id="5aaa957f-3447-4783-b1f7-b301fa3e0394" name="org.modellwerkstatt.manmap">
@@ -307,6 +317,7 @@
       <concept id="465568541573490183" name="org.modellwerkstatt.dataux.structure.IHasFormOptions" flags="ng" index="PoUSo">
         <child id="465568541573490184" name="options" index="PoUSn" />
       </concept>
+      <concept id="465568541573490181" name="org.modellwerkstatt.dataux.structure.IFOption" flags="ng" index="PoUSq" />
       <concept id="465568541573497275" name="org.modellwerkstatt.dataux.structure.SelectFirstFOption" flags="ng" index="PoWA$" />
       <concept id="3899779351686566805" name="org.modellwerkstatt.dataux.structure.StatusDelegate" flags="ng" index="2TG9WX" />
       <concept id="7834248083556639603" name="org.modellwerkstatt.dataux.structure.OneWeight" flags="ng" index="2U5nhG" />
@@ -583,9 +594,10 @@
         <node concept="P1rGi" id="4LNQ1dLJ5Ps" role="3cqZAp">
           <ref role="P14SV" node="4LNQ1dLJ5Nl" resolve="MapDeliveryNote" />
           <node concept="37vLTw" id="4LNQ1dLJ5Pu" role="P1rGp">
-            <ref role="3cqZAo" node="4LNQ1dLJ5Pp" resolve="parcel" />
+            <ref role="3cqZAo" node="4LNQ1dLJ5Pp" resolve="note" />
           </node>
         </node>
+        <node concept="3clFbH" id="41ZzNBTLtC" role="3cqZAp" />
         <node concept="3clFbF" id="4LNQ1dLJ5Pw" role="3cqZAp">
           <node concept="2OqwBi" id="4LNQ1dLJ5Py" role="3clFbG">
             <node concept="2es0OD" id="4LNQ1dLJ5PB" role="2OqNvi">
@@ -594,19 +606,19 @@
                   <node concept="P1rGi" id="4LNQ1dLJ5PK" role="3cqZAp">
                     <ref role="P14SV" node="4LNQ1dLJ5NG" resolve="MapItem" />
                     <node concept="37vLTw" id="4LNQ1dLJ5PM" role="P1rGp">
-                      <ref role="3cqZAo" node="4LNQ1dLJ5PF" resolve="it" />
+                      <ref role="3cqZAo" node="4LNQ1dLJ5PF" resolve="theItem" />
                     </node>
                   </node>
                 </node>
                 <node concept="Rh6nW" id="4LNQ1dLJ5PF" role="1bW2Oz">
-                  <property role="TrG5h" value="it" />
+                  <property role="TrG5h" value="theItem" />
                   <node concept="2jxLKc" id="4LNQ1dLJ5PG" role="1tU5fm" />
                 </node>
               </node>
             </node>
             <node concept="2OqwBi" id="4LNQ1dLJ5PH" role="2Oq$k0">
               <node concept="37vLTw" id="4LNQ1dLJ5PI" role="2Oq$k0">
-                <ref role="3cqZAo" node="4LNQ1dLJ5Pp" resolve="parcel" />
+                <ref role="3cqZAo" node="4LNQ1dLJ5Pp" resolve="note" />
               </node>
               <node concept="2S8uIT" id="4LNQ1dLJ5PJ" role="2OqNvi">
                 <ref role="2S8YL0" to="alhp:4bjBXGry85p" resolve="items" />
@@ -616,7 +628,7 @@
         </node>
       </node>
       <node concept="37vLTG" id="4LNQ1dLJ5Pp" role="3clF46">
-        <property role="TrG5h" value="parcel" />
+        <property role="TrG5h" value="note" />
         <node concept="3uibUv" id="4LNQ1dLJ5Pr" role="1tU5fm">
           <ref role="3uigEE" to="alhp:4bjBXGry4ts" resolve="DeliveryNote" />
         </node>
@@ -963,15 +975,18 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="41ZzNBTKHZ" role="3cqZAp" />
+        <node concept="3clFbH" id="41ZzNBTKQQ" role="3cqZAp" />
+        <node concept="3clFbH" id="41ZzNBTKJ1" role="3cqZAp" />
       </node>
     </node>
     <node concept="20qIzx" id="4LNQ1dLJ5R$" role="10_T4l">
       <node concept="3clFbS" id="4LNQ1dLJ5R_" role="2VODD2">
-        <node concept="3clFbF" id="4LNQ1dLJ5RC" role="3cqZAp">
-          <node concept="1odsa" id="4LNQ1dLJ5RA" role="3clFbG">
+        <node concept="3clFbF" id="41ZzNBTL74" role="3cqZAp">
+          <node concept="1odsa" id="41ZzNBTL73" role="3clFbG">
             <ref role="1ods_" node="4LNQ1dLJ5O4" resolve="NoteRepository" />
             <ref role="37wK5l" node="4LNQ1dLJ5Pk" resolve="checkinNote" />
-            <node concept="10EhbA" id="4LNQ1dLJ5RB" role="37wK5m">
+            <node concept="10EhbA" id="41ZzNBTL8_" role="37wK5m">
               <ref role="10EhbB" node="4LNQ1dLJ5PP" resolve="note" />
             </node>
           </node>
@@ -1083,6 +1098,7 @@
           </node>
         </node>
         <node concept="PoWA$" id="4LNQ1dLJ5Sj" role="PoUSn" />
+        <node concept="PoUSq" id="3Gz04y9ztYm" role="PoUSn" />
         <node concept="3Oe2IN" id="4LNQ1dLJ5Sw" role="3OfFNq">
           <node concept="PnLzW" id="4LNQ1dLJ5Sx" role="PoUSh">
             <property role="PiFy3" value="32" />
@@ -1107,11 +1123,11 @@
             <ref role="3O0p26" to="alhp:4bjBXGry4uy" resolve="name" />
           </node>
         </node>
-        <node concept="3Oe2In" id="4LNQ1dLJ5SD" role="3OfFNq">
-          <node concept="PnLzW" id="4LNQ1dLJ5SE" role="PoUSh">
+        <node concept="3Oe2In" id="41ZzNBT6Bw" role="3OfFNq">
+          <node concept="PnLzW" id="41ZzNBT6Bx" role="PoUSh">
             <property role="PiFy3" value="16" />
           </node>
-          <node concept="3Oe$u_" id="4LNQ1dLJ5SF" role="3$nDjG">
+          <node concept="3Oe$u_" id="41ZzNBT6By" role="3$nDjG">
             <ref role="3O0p26" to="alhp:4bjBXGry4HO" resolve="val" />
           </node>
         </node>
@@ -1823,6 +1839,66 @@
                 </node>
               </node>
               <node concept="3clFbH" id="UwRB1_EL8r" role="3cqZAp" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2WPaUQ" id="41ZzNBTT_a">
+    <property role="TrG5h" value="JimmyTest" />
+    <ref role="2WPtWl" to="dhke:6hyGm0IF50R" resolve="FX8_Oracle" />
+    <node concept="3yPF9F" id="41ZzNBTTC3" role="3yMuLx">
+      <property role="TrG5h" value="Do somthing here with the open command" />
+      <node concept="3cqZAl" id="41ZzNBTTCj" role="3clF45" />
+      <node concept="3clFbS" id="41ZzNBTTC7" role="3clF47">
+        <node concept="3cpWs8" id="41ZzNBTUoZ" role="3cqZAp">
+          <node concept="3cpWsn" id="41ZzNBTUp0" role="3cpWs9">
+            <property role="TrG5h" value="session" />
+            <node concept="3uibUv" id="41ZzNBTUp1" role="1tU5fm">
+              <ref role="3uigEE" to="28jr:7rqBz8B3JBf" resolve="IOFXSession" />
+            </node>
+            <node concept="3er55J" id="41ZzNBTUqg" role="33vP2m" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="41ZzNBTUnb" role="3cqZAp" />
+        <node concept="3cpWs8" id="41ZzNBTUiA" role="3cqZAp">
+          <node concept="3cpWsn" id="41ZzNBTUiB" role="3cpWs9">
+            <property role="TrG5h" value="aNote" />
+            <node concept="3uibUv" id="41ZzNBTUiC" role="1tU5fm">
+              <ref role="3uigEE" to="alhp:4bjBXGry4ts" resolve="DeliveryNote" />
+            </node>
+            <node concept="1odsa" id="41ZzNBTUjF" role="33vP2m">
+              <ref role="1ods_" to="alhp:40ZzJ0VsYfQ" resolve="DeliverNoteFactory" />
+              <ref role="37wK5l" to="alhp:40ZzJ0VsYhA" resolve="createDeliveryNote" />
+              <node concept="Xl_RD" id="41ZzNBTUkQ" role="37wK5m">
+                <property role="Xl_RC" value="Jimmy Test" />
+              </node>
+              <node concept="3cmrfG" id="41ZzNBTUmI" role="37wK5m">
+                <property role="3cmrfH" value="5" />
+              </node>
+              <node concept="37vLTw" id="41ZzNBTUrk" role="2f8TIa">
+                <ref role="3cqZAo" node="41ZzNBTUp0" resolve="session" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="41ZzNBTUrT" role="3cqZAp" />
+        <node concept="1gVbGN" id="41ZzNBTUvg" role="3cqZAp">
+          <node concept="2OqwBi" id="41ZzNBTU$9" role="1gVkn0">
+            <node concept="2OqwBi" id="41ZzNBTUxu" role="2Oq$k0">
+              <node concept="37vLTw" id="41ZzNBTUx3" role="2Oq$k0">
+                <ref role="3cqZAo" node="41ZzNBTUiB" resolve="aNote" />
+              </node>
+              <node concept="2S8uIT" id="41ZzNBTUyq" role="2OqNvi">
+                <ref role="2S8YL0" to="alhp:4bjBXGry7U2" resolve="name" />
+              </node>
+            </node>
+            <node concept="liA8E" id="41ZzNBTUBs" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+              <node concept="Xl_RD" id="41ZzNBTUBZ" role="37wK5m">
+                <property role="Xl_RC" value="Jimmgy Test" />
+              </node>
             </node>
           </node>
         </node>
